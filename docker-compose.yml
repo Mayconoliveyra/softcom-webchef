@@ -1,0 +1,45 @@
+services:
+  app:
+    container_name: webchef-app
+    build:
+      context: .
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    ports:
+      - "${APP_PORT:-18080}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    container_name: webchef-db
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-softcom_webchef}
+      MYSQL_USER: ${DB_USERNAME:-webchef}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-webchef}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-webchef_root_local}
+    volumes:
+      - webchef_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-webchef_root_local}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  phpmyadmin:
+    container_name: webchef-phpmyadmin
+    image: phpmyadmin:5.2.1-apache
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    ports:
+      - "${PMA_PORT:-18081}:80"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  webchef_mysql_data:

@@ -1,0 +1,30 @@
+.brand-link .brand-text,
+.login-logo {
+    letter-spacing: -0.3px;
+}
+
+.marca-softcom,
+.marca-webchef {
+    font-weight: 700;
+}
+
+.brand-link .marca-softcom {
+    color: #f4f6f9;
+}
+
+.login-logo .marca-softcom {
+    color: #343a40;
+}
+
+.marca-webchef {
+    color: #f4b400;
+}
+
+.webchef-auth-icon {
+    margin-right: 0.25rem;
+    vertical-align: middle;
+}
+
+.preloader img.img-circle {
+    border-radius: 0;
+}
