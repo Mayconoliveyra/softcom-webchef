@@ -15,7 +15,6 @@ class CreateCadastroFuncionariosTable extends Migration
             $table->string('senha');
             $table->boolean('ativo')->default(true);
             $table->timestamps();
-            // Mantém o registro no banco quando o funcionário for excluído.
             $table->softDeletes();
         });
     }
