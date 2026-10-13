@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cliente;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -24,6 +25,17 @@ class DatabaseSeeder extends Seeder
                 'nome' => $name,
                 'senha' => Hash::make($password),
                 'ativo' => true,
+            ]
+        );
+
+        Cliente::withTrashed()->firstOrCreate(
+            ['nome' => 'CONSUMIDOR'],
+            [
+                'razao_social' => null,
+                'tipo_pessoa' => 'fisica',
+                'documento' => null,
+                'ativo' => true,
+                'padrao' => true,
             ]
         );
     }

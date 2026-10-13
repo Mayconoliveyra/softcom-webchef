@@ -119,6 +119,11 @@ return [
             'route' => 'funcionarios.index',
             'icon' => 'fas fa-fw fa-users',
         ],
+        [
+            'text' => 'Clientes',
+            'route' => 'clientes.index',
+            'icon' => 'fas fa-fw fa-address-book',
+        ],
     ],
 
     'filters' => [
