@@ -5,6 +5,8 @@
 /vendor
 .env
 .env.backup
+# Anotações locais de estudo; não fazem parte da entrega versionada.
+/docs/local/
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

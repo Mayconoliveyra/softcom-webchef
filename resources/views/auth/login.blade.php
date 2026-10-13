@@ -3,7 +3,7 @@
 @section('auth_header', __('adminlte::adminlte.login_message'))
 
 @section('auth_body')
-    <form action="{{ route('login') }}" method="POST">
+    <form action="{{ route('login.store') }}" method="POST">
         @csrf
 
         <div class="input-group mb-3">
