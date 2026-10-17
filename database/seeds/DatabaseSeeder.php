@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Cliente;
 use App\Models\Mesa;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -32,16 +31,10 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        Cliente::withTrashed()->firstOrCreate(
-            ['nome' => 'CONSUMIDOR'],
-            [
-                'razao_social' => null,
-                'tipo_pessoa' => 'fisica',
-                'documento' => null,
-                'ativo' => true,
-                'padrao' => true,
-            ]
-        );
+        $this->call([
+            ClienteSeeder::class,
+            ProdutoSeeder::class,
+        ]);
 
         for ($numero = 1; $numero <= 30; $numero++) {
             Mesa::withTrashed()->firstOrCreate(
