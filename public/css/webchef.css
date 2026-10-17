@@ -148,3 +148,11 @@
 .produto-imagem-upload__area.previsualizacao-atualizada .produto-imagem-upload__acao {
     display: none;
 }
+
+.produto-listagem-imagem {
+    align-items: center;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+}

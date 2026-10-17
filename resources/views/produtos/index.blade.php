@@ -31,17 +31,19 @@
                 <tbody>
                     @forelse ($produtos as $produto)
                         <tr>
-                            <td>
-                                @if ($produto->imagem)
-                                    <img
-                                        src="{{ asset('storage/' . $produto->imagem) }}"
-                                        alt=""
-                                        class="img-thumbnail"
-                                        style="width: 48px; height: 48px; object-fit: cover;"
-                                    >
-                                @else
-                                    <span class="text-muted">-</span>
-                                @endif
+                            <td class="align-middle">
+                                <div class="produto-listagem-imagem">
+                                    @if ($produto->imagem)
+                                        <img
+                                            src="{{ asset('storage/' . $produto->imagem) }}"
+                                            alt=""
+                                            class="img-thumbnail"
+                                            style="width: 48px; height: 48px; object-fit: cover;"
+                                        >
+                                    @else
+                                        <span class="text-muted">-</span>
+                                    @endif
+                                </div>
                             </td>
                             <td>{{ $produto->nome }}</td>
                             <td>{{ $produto->preco_formatado }}</td>
