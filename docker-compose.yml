@@ -22,6 +22,8 @@ services:
     env_file:
       - .env
     working_dir: /var/www
+    volumes:
+      - ./storage/app/public:/var/www/storage/app/public
     environment:
       APP_URL: "http://localhost:${APP_BUILD_PORT:-18082}"
       SESSION_COOKIE: softcom_webchef_build_session

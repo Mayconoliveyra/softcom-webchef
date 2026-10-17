@@ -156,3 +156,99 @@
     justify-content: center;
     width: 48px;
 }
+
+.mesa-card {
+    border-top: 3px solid #28a745;
+    min-height: 190px;
+}
+
+.mesa-card--ocupada {
+    border-top-color: #007bff;
+}
+
+.mesa-card__numero {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.mesa-card__cliente,
+.mesa-card__vazia {
+    color: #6c757d;
+    font-size: 0.875rem;
+    height: 21px;
+    margin: 0.75rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mesa-card__total {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.select2-container--bootstrap4 .select2-selection {
+    min-height: calc(2.25rem + 2px);
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
+    line-height: calc(2.25rem + 2px);
+    padding-left: .75rem;
+    color: #495057;
+}
+
+.select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
+    height: calc(2.25rem + 2px);
+}
+
+.select2-container--bootstrap4.select2-container--focus .select2-selection,
+.select2-container--bootstrap4.select2-container--open .select2-selection {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+.pagamento-forma {
+    min-width: 92px;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.resumo-pagamento {
+    height: 100%;
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+.resumo-pagamento-linha {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.resumo-pagamento-linha:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.nav-sidebar .nav-header.menu-divider {
+    height: 1px;
+    margin: 0.65rem 1rem 0.5rem;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+body.layout-fixed .wrapper {
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+.content-wrapper .content {
+    padding-bottom: 4rem;
+}

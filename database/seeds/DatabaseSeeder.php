@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Cliente;
+use App\Models\Mesa;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -41,5 +42,12 @@ class DatabaseSeeder extends Seeder
                 'padrao' => true,
             ]
         );
+
+        for ($numero = 1; $numero <= 30; $numero++) {
+            Mesa::withTrashed()->firstOrCreate(
+                ['numero' => $numero],
+                ['ativo' => true]
+            );
+        }
     }
 }

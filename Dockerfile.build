@@ -20,6 +20,7 @@ RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts --no-a
 COPY . .
 
 RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/testing storage/framework/views storage/logs bootstrap/cache \
+    && ln -s ../storage/app/public public/storage \
     && composer dump-autoload --optimize --no-dev
 
 RUN { \

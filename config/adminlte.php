@@ -52,7 +52,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -115,9 +115,13 @@ return [
             'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
         [
-            'text' => 'Funcionários',
-            'route' => 'funcionarios.index',
-            'icon' => 'fas fa-fw fa-users',
+            'header' => '',
+            'classes' => 'menu-divider',
+        ],
+        [
+            'text' => 'Produtos',
+            'route' => 'produtos.index',
+            'icon' => 'fas fa-fw fa-utensils',
         ],
         [
             'text' => 'Clientes',
@@ -125,9 +129,23 @@ return [
             'icon' => 'fas fa-fw fa-address-book',
         ],
         [
-            'text' => 'Produtos',
-            'route' => 'produtos.index',
-            'icon' => 'fas fa-fw fa-utensils',
+            'text' => 'Funcionários',
+            'route' => 'funcionarios.index',
+            'icon' => 'fas fa-fw fa-users',
+        ],
+        [
+            'header' => '',
+            'classes' => 'menu-divider',
+        ],
+        [
+            'text' => 'Mesas',
+            'route' => 'mesas.index',
+            'icon' => 'fas fa-fw fa-th',
+        ],
+        [
+            'text' => 'Pedidos',
+            'route' => 'pedidos.index',
+            'icon' => 'fas fa-fw fa-clipboard-list',
         ],
     ],
 
@@ -184,6 +202,11 @@ return [
                     'type' => 'css',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdn.jsdelivr.net/npm/select2-bootstrap4-theme@1.1.0/dist/select2-bootstrap4.min.css',
                 ],
             ],
         ],
