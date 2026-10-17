@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label for="nome">Nome</label>
+    <label for="nome">Nome <span class="text-danger">*</span></label>
     <input
         type="text"
         name="nome"
@@ -16,7 +16,7 @@
 </div>
 
 <div class="form-group">
-    <label for="email">E-mail</label>
+    <label for="email">E-mail <span class="text-danger">*</span></label>
     <input
         type="email"
         name="email"
@@ -32,7 +32,12 @@
 </div>
 
 <div class="form-group">
-    <label for="senha">{{ isset($funcionario) ? 'Nova senha' : 'Senha' }}</label>
+    <label for="senha">
+        {{ isset($funcionario) ? 'Nova senha' : 'Senha' }}
+        @if (! isset($funcionario))
+            <span class="text-danger">*</span>
+        @endif
+    </label>
     <input
         type="password"
         name="senha"
@@ -50,7 +55,12 @@
 </div>
 
 <div class="form-group">
-    <label for="senha_confirmation">Confirme a senha</label>
+    <label for="senha_confirmation">
+        Confirme a senha
+        @if (! isset($funcionario))
+            <span class="text-danger">*</span>
+        @endif
+    </label>
     <input
         type="password"
         name="senha_confirmation"

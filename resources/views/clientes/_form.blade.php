@@ -4,7 +4,7 @@
 @endphp
 
 <div class="form-group">
-    <label for="tipo_pessoa">Tipo de pessoa</label>
+    <label for="tipo_pessoa">Tipo de pessoa <span class="text-danger">*</span></label>
     <select
         name="tipo_pessoa"
         id="tipo_pessoa"
@@ -36,7 +36,7 @@
 </div>
 
 <div class="form-group">
-    <label for="nome" id="label_nome">Nome</label>
+    <label for="nome"><span id="label_nome">Nome</span> <span class="text-danger">*</span></label>
     <input
         type="text"
         name="nome"
@@ -53,7 +53,7 @@
 </div>
 
 <div class="form-group {{ $tipoPessoa === 'juridica' ? '' : 'd-none' }}" id="grupo_razao_social">
-    <label for="razao_social">Razão social</label>
+    <label for="razao_social">Razão social <span class="text-danger">*</span></label>
     <input
         type="text"
         name="razao_social"
