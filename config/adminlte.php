@@ -124,6 +124,11 @@ return [
             'route' => 'clientes.index',
             'icon' => 'fas fa-fw fa-address-book',
         ],
+        [
+            'text' => 'Produtos',
+            'route' => 'produtos.index',
+            'icon' => 'fas fa-fw fa-utensils',
+        ],
     ],
 
     'filters' => [

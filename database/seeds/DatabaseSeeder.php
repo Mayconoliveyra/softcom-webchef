@@ -19,12 +19,15 @@ class DatabaseSeeder extends Seeder
             );
         }
 
-        User::firstOrCreate(
+        // withTrashed() considera também registros excluídos logicamente(deleted_at).
+
+        User::withTrashed()->firstOrCreate(
             ['email' => $email],
             [
                 'nome' => $name,
                 'senha' => Hash::make($password),
                 'ativo' => true,
+                'padrao' => true,
             ]
         );
 

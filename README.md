@@ -30,3 +30,13 @@ docker compose exec app php artisan migrate
 - `app`: models e regras da aplicação.
 - `database/migrations`: estrutura do banco.
 - `resources/views`: telas Blade com AdminLTE.
+
+## Imagens de produtos
+
+Para exibir no navegador as imagens enviadas no cadastro de produtos, execute uma vez por cópia do projeto:
+
+```powershell
+docker compose exec app php artisan storage:link
+```
+
+O comando cria o link `public/storage` para os arquivos armazenados em `storage/app/public`.

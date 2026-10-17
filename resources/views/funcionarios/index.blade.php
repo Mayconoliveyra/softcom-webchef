@@ -44,20 +44,24 @@
                                 @endif
                             </td>
                             <td class="text-right">
-                                <a href="{{ route('funcionarios.edit', $funcionario) }}" class="btn btn-sm btn-outline-primary">
-                                    Editar
-                                </a>
-                                <form action="{{ route('funcionarios.destroy', $funcionario) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button
-                                        type="submit"
-                                        class="btn btn-sm btn-outline-danger"
-                                        onclick="return confirm('Deseja excluir este funcionário?')"
-                                    >
-                                        Excluir
-                                    </button>
-                                </form>
+                                @if (! $funcionario->padrao)
+                                    <a href="{{ route('funcionarios.edit', $funcionario) }}" class="btn btn-sm btn-outline-primary">
+                                        Editar
+                                    </a>
+                                    <form action="{{ route('funcionarios.destroy', $funcionario) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button
+                                            type="submit"
+                                            class="btn btn-sm btn-outline-danger"
+                                            onclick="return confirm('Deseja excluir este funcionário?')"
+                                        >
+                                            Excluir
+                                        </button>
+                                    </form>
+                                @else
+                                    <span class="text-muted">-</span>
+                                @endif
                             </td>
                         </tr>
                     @empty

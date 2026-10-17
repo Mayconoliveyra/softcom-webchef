@@ -13,7 +13,7 @@ class User extends Authenticatable
     protected $table = 'cadastro_funcionarios';
 
     protected $fillable = [
-        'nome', 'email', 'senha', 'ativo',
+        'nome', 'email', 'senha', 'ativo', 'padrao',
     ];
 
     protected $hidden = [
@@ -22,6 +22,7 @@ class User extends Authenticatable
 
     protected $casts = [
         'ativo' => 'boolean',
+        'padrao' => 'boolean',
     ];
 
     public function getAuthPassword()

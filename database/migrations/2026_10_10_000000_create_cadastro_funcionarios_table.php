@@ -14,6 +14,7 @@ class CreateCadastroFuncionariosTable extends Migration
             $table->string('email');
             $table->string('senha');
             $table->boolean('ativo')->default(true);
+            $table->boolean('padrao')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

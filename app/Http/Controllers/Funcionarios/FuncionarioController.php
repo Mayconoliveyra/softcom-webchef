@@ -31,6 +31,7 @@ class FuncionarioController extends Controller
     {
         $dados = $this->dadosValidados($request);
         $dados['senha'] = Hash::make($dados['senha']);
+        $dados['padrao'] = false;
 
         User::create($dados);
 
@@ -41,11 +42,23 @@ class FuncionarioController extends Controller
 
     public function edit(User $funcionario)
     {
+        if ($funcionario->padrao) {
+            return redirect()
+                ->route('funcionarios.index')
+                ->with('error', 'O funcionário padrão não pode ser editado.');
+        }
+
         return view('funcionarios.edit', compact('funcionario'));
     }
 
     public function update(Request $request, User $funcionario)
     {
+        if ($funcionario->padrao) {
+            return redirect()
+                ->route('funcionarios.index')
+                ->with('error', 'O funcionário padrão não pode ser editado.');
+        }
+
         $dados = $this->dadosValidados($request, $funcionario);
 
         if (! $dados['ativo'] && $funcionario->id === auth()->id()) {
@@ -69,6 +82,12 @@ class FuncionarioController extends Controller
 
     public function destroy(User $funcionario)
     {
+        if ($funcionario->padrao) {
+            return redirect()
+                ->route('funcionarios.index')
+                ->with('error', 'O funcionário padrão não pode ser excluído.');
+        }
+
         if ($funcionario->id === auth()->id()) {
             return redirect()
                 ->route('funcionarios.index')
